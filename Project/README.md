@@ -406,7 +406,7 @@ https://github.com/Kishore2912Dev
 
 Repository:
 
-https://github.com/Kishore2912Dev/Nutrition_Assistant_Project-And-Documentation/new/master/Project
+https://github.com/Kishore2912Dev/Nutrition_Assistant_Project-And-Documentation
 
 ---
 
