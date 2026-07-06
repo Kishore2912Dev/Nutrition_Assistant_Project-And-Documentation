@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-green: #16A34A;
+  --dark-green: #166534;
+  --light-green: #E8F5E9;
+  --white: #FFFFFF;
+  --black: #111827;
+  --light-bg: #F8FAF8;
+  --gray-text: #4B5563;
+  --border-color: #E5E7EB;
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--light-bg);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Customizations */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.text-primary-green {
+  color: var(--primary-green) !important;
+}
+
+.text-dark-green {
+  color: var(--dark-green) !important;
+}
+
+.bg-primary-green {
+  background-color: var(--primary-green) !important;
+  color: white;
+}
+
+.bg-dark-green {
+  background-color: var(--dark-green) !important;
+  color: white;
+}
+
+.bg-light-green {
+  background-color: var(--light-green) !important;
+}
+
+/* Custom Premium Buttons */
+.btn-primary-green {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-green:hover {
+  background-color: var(--dark-green);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+}
+
+.btn-outline-green {
+  background-color: transparent;
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-green:hover {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+/* Premium Rounded Cards */
+.health-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+}
+
+.health-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Sticky Navbar Styling */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* App Main Container Grid */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 260px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-link {
+  color: #9CA3AF;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+  color: var(--white);
+  background-color: var(--dark-green);
+}
+
+.sidebar .nav-link.active {
+  background-color: var(--primary-green);
+}
+
+/* Content Container */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--light-bg);
+  overflow-y: auto;
+}
+
+/* Custom form inputs */
+.form-control:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.25rem rgba(22, 163, 74, 0.25);
+}
+
+/* Macro circles progress indicators */
+.macro-progress {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.macro-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--border-color);
+  overflow: hidden;
+}
+
+.macro-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.macro-protein { background-color: #EAB308; } /* Yellow */
+.macro-carbs { background-color: #3B82F6; } /* Blue */
+.macro-fat { background-color: #EF4444; } /* Red */
+.macro-water { background-color: #06B6D4; } /* Teal */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+/* Report Print Layout for PDF Export */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  .sidebar, .sticky-navbar, .btn, .no-print {
+    display: none !important;
+  }
+  .main-content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .health-card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
