@@ -400,6 +400,12 @@ git push origin feature-name
 
 📧 Email: vanapallisuryaramakishore@gmail.com
 
+👨‍💻 Team Members
+Surya Rama Kishore Vanapalli (Team Lead)
+Vijaydurga Beera
+Harsha Vardhan D
+Siddhu Kutchula
+
 GitHub:
 
 https://github.com/Kishore2912Dev
